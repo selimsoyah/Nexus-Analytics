@@ -1,8 +1,9 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy import create_engine, text
-from auth import router as auth_router
+# from auth import router as auth_router  # Temporarily disabled due to bcrypt issue
 from api_enhanced import router as enhanced_router
+from clv_api import router as clv_router
 
 
 app = FastAPI(
@@ -12,8 +13,9 @@ app = FastAPI(
 )
 
 # Include routers
-app.include_router(auth_router)
+# app.include_router(auth_router)  # Temporarily disabled
 app.include_router(enhanced_router, prefix="/v2", tags=["Enhanced Analytics"])
+app.include_router(clv_router, prefix="/v2", tags=["Customer Lifetime Value"])
 
 app.add_middleware(
     CORSMiddleware,

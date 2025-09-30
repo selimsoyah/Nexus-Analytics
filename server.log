@@ -1,0 +1,86 @@
+nohup: ignoring input
+INFO:     Started server process [364628]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:60784 - "GET /v2/analytics/clv/customer/1 HTTP/1.1" 200 OK
+INFO:analytics.clv_calculator:Calculating CLV for 3 customers
+INFO:analytics.clv_calculator:Successfully calculated CLV for 3 customers
+INFO:     127.0.0.1:52914 - "GET /v2/analytics/clv/bulk?limit=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56040 - "GET /v2/analytics/clv/platform-summary HTTP/1.1" 200 OK
+INFO:analytics.clv_calculator:Calculating CLV for 3 customers
+INFO:analytics.clv_calculator:Successfully calculated CLV for 3 customers
+INFO:     127.0.0.1:36368 - "GET /v2/analytics/clv/segments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38592 - "OPTIONS /universal/analytics/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38606 - "OPTIONS /universal/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38620 - "OPTIONS /universal/products HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38626 - "OPTIONS /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38636 - "OPTIONS /v2/analytics/product-performance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38652 - "OPTIONS /v2/analytics/cross-platform-insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38656 - "OPTIONS /universal/analytics/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38662 - "OPTIONS /universal/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38672 - "OPTIONS /universal/products HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38684 - "OPTIONS /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38694 - "OPTIONS /v2/analytics/product-performance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38704 - "OPTIONS /v2/analytics/cross-platform-insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38636 - "OPTIONS /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38626 - "OPTIONS /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38620 - "OPTIONS /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38606 - "OPTIONS /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38636 - "OPTIONS /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38652 - "GET /universal/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38620 - "OPTIONS /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38704 - "GET /universal/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38606 - "OPTIONS /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38592 - "GET /universal/analytics/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38656 - "GET /universal/analytics/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38694 - "GET /universal/products HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38684 - "GET /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38626 - "GET /universal/products HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38636 - "GET /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38592 - "GET /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38652 - "GET /v2/analytics/product-performance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38672 - "GET /v2/analytics/product-performance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38662 - "GET /v2/analytics/cross-platform-insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38620 - "GET /v2/analytics/cross-platform-insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38652 - "GET /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38620 - "GET /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38652 - "GET /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38620 - "GET /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38652 - "GET /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38620 - "GET /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38652 - "GET /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49250 - "GET /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49252 - "GET /v2/analytics/product-performance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49246 - "GET /universal/products HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49242 - "GET /universal/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49240 - "GET /universal/analytics/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49268 - "GET /v2/analytics/cross-platform-insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49250 - "GET /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49242 - "GET /universal/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49246 - "GET /universal/products HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49252 - "GET /v2/analytics/product-performance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49250 - "GET /v2/analytics/cross-platform-insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49268 - "GET /universal/analytics/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37526 - "GET /universal/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37532 - "GET /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37548 - "GET /universal/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37526 - "GET /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37532 - "GET /universal/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37526 - "GET /universal/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37532 - "GET /universal/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37526 - "GET /universal/customers HTTP/1.1" 200 OK
+INFO:analytics.clv_calculator:Calculating CLV for 3 customers
+INFO:analytics.clv_calculator:Successfully calculated CLV for 3 customers
+INFO:     127.0.0.1:37526 - "GET /v2/analytics/clv/bulk?limit=200 HTTP/1.1" 200 OK
+INFO:analytics.clv_calculator:Calculating CLV for 3 customers
+INFO:analytics.clv_calculator:Successfully calculated CLV for 3 customers
+INFO:     127.0.0.1:37532 - "GET /v2/analytics/clv/bulk?limit=200 HTTP/1.1" 200 OK
+INFO:analytics.clv_calculator:Calculating CLV for 3 customers
+INFO:analytics.clv_calculator:Successfully calculated CLV for 3 customers
+INFO:     127.0.0.1:37526 - "GET /v2/analytics/clv/segments?limit=200 HTTP/1.1" 200 OK
+INFO:analytics.clv_calculator:Calculating CLV for 3 customers
+INFO:analytics.clv_calculator:Successfully calculated CLV for 3 customers
+INFO:     127.0.0.1:37532 - "GET /v2/analytics/clv/segments?limit=200 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37526 - "GET /v2/analytics/clv/platform-summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37526 - "GET /v2/analytics/clv/platform-summary HTTP/1.1" 200 OK

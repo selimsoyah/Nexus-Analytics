@@ -10,10 +10,11 @@ import { DashboardLayout, MetricCard, LoadingSpinner, ErrorMessage } from '@/com
 import { CustomerAnalytics } from '@/components/charts/CustomerCharts';
 import { ProductAnalytics } from '@/components/charts/ProductCharts';
 import { SalesAnalytics } from '@/components/charts/SalesCharts';
+import { CLVAnalytics } from '@/components/charts/CLVCharts';
 import { useDashboardData, useAnalyticsFilters, useAutoRefresh } from '@/hooks/useAnalytics';
 import { formatCurrency, formatNumber } from '@/components/charts/ChartUtils';
 
-type DashboardTab = 'overview' | 'customers' | 'products' | 'sales';
+type DashboardTab = 'overview' | 'customers' | 'products' | 'sales' | 'clv';
 
 export default function AnalyticsPage() {
   const [activeTab, setActiveTab] = useState<DashboardTab>('overview');
@@ -153,6 +154,7 @@ export default function AnalyticsPage() {
                 { id: 'customers', name: 'Customers', icon: Users },
                 { id: 'products', name: 'Products', icon: Package },
                 { id: 'sales', name: 'Sales', icon: ShoppingCart },
+                { id: 'clv', name: 'Customer CLV', icon: DollarSign },
               ].map((tab) => {
                 const Icon = tab.icon;
                 return (
@@ -283,6 +285,11 @@ export default function AnalyticsPage() {
           {/* Sales Tab */}
           {activeTab === 'sales' && (
             <SalesAnalytics filters={filters} />
+          )}
+
+          {/* CLV Tab */}
+          {activeTab === 'clv' && (
+            <CLVAnalytics filters={filters} />
           )}
         </div>
       </div>

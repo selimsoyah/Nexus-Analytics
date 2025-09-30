@@ -39,6 +39,9 @@ export function generateColors(count: number): string[] {
   return result;
 }
 
+// Export COLORS for compatibility
+export const COLORS = Object.values(CHART_COLORS);
+
 // Format currency values
 export function formatCurrency(value: number, currency: string = 'USD'): string {
   return new Intl.NumberFormat('en-US', {
@@ -163,4 +166,38 @@ export const CHART_MARGINS = {
   default: { top: 20, right: 30, left: 20, bottom: 5 },
   withLabels: { top: 20, right: 30, left: 40, bottom: 40 },
   large: { top: 40, right: 40, left: 40, bottom: 40 },
+};
+
+// Chart Container Component
+interface ChartContainerProps {
+  title: string;
+  description?: string;
+  icon?: React.ReactNode;
+  children: React.ReactNode;
+  className?: string;
+}
+
+export const ChartContainer: React.FC<ChartContainerProps> = ({
+  title,
+  description,
+  icon,
+  children,
+  className
+}) => {
+  return (
+    <div className={cn("bg-white p-6 rounded-lg shadow-sm border", className)}>
+      <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center space-x-2">
+          {icon}
+          <div>
+            <h3 className="text-lg font-semibold text-gray-900">{title}</h3>
+            {description && (
+              <p className="text-sm text-gray-600">{description}</p>
+            )}
+          </div>
+        </div>
+      </div>
+      {children}
+    </div>
+  );
 };
