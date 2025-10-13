@@ -12,15 +12,28 @@ ALGORITHM = "HS256"
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 
-# Dummy user database (in-memory)
+# Dummy user database (in-memory) - hash passwords lazily to avoid startup issues
 fake_users_db = {
     "user@example.com": {
         "username": "user@example.com",
         "full_name": "Test User",
-        "hashed_password": pwd_context.hash("password123"),
+        "hashed_password": None,  # Will be hashed on first use
         "role": "user"
+    },
+    "admin@nexusanalytics.com": {
+        "username": "admin@nexusanalytics.com",
+        "full_name": "Nexus Admin",
+        "hashed_password": None,  # Will be hashed on first use
+        "role": "admin"
     }
 }
+
+def get_hashed_password(user_email: str):
+    """Get or create hashed password for user"""
+    user = fake_users_db.get(user_email)
+    if user and user["hashed_password"] is None:
+        user["hashed_password"] = pwd_context.hash("password123")
+    return user["hashed_password"] if user else None
 from pydantic import BaseModel
 
 # Registration request model
@@ -43,7 +56,8 @@ def authenticate_user(username: str, password: str):
     user = fake_users_db.get(username)
     if not user:
         return False
-    if not verify_password(password, user["hashed_password"]):
+    hashed_password = get_hashed_password(username)
+    if not hashed_password or not verify_password(password, hashed_password):
         return False
     return user
 
@@ -61,8 +75,8 @@ def login(form_data: OAuth2PasswordRequestForm = Depends()):
     access_token = create_access_token({"sub": user["username"]})
     return {"access_token": access_token, "token_type": "bearer"}
 
-@router.get("/me")
-def read_users_me(token: str = Depends(oauth2_scheme)):
+def get_current_user(token: str = Depends(oauth2_scheme)):
+    """Get current authenticated user"""
     try:
         payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
         username = payload.get("sub")
@@ -74,6 +88,19 @@ def read_users_me(token: str = Depends(oauth2_scheme)):
         return user
     except JWTError:
         raise HTTPException(status_code=401, detail="Invalid token")
+
+def get_admin_user(current_user: dict = Depends(get_current_user)):
+    """Require admin role for access"""
+    if current_user.get("role") != "admin":
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Admin access required"
+        )
+    return current_user
+
+@router.get("/me")
+def read_users_me(current_user: dict = Depends(get_current_user)):
+    return current_user
 @router.post("/register")
 def register_user(req: RegisterRequest):
     if req.username in fake_users_db:

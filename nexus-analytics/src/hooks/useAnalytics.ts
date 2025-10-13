@@ -14,7 +14,7 @@ import {
 } from '@/types/analytics';
 
 // Base API URL - adjust if your backend runs on different port
-const API_BASE_URL = 'http://localhost:8000';
+const API_BASE_URL = 'http://localhost:8001';
 
 // Generic hook for API calls with loading and error states
 function useApiCall<T>(url: string, dependencies: any[] = []) {
@@ -31,8 +31,8 @@ function useApiCall<T>(url: string, dependencies: any[] = []) {
         headers: {
           'Content-Type': 'application/json',
           // Add authorization header if user is logged in
-          ...(typeof window !== 'undefined' && localStorage.getItem('token') 
-            ? { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
+          ...(typeof window !== 'undefined' && localStorage.getItem('auth_token') 
+            ? { 'Authorization': `Bearer ${localStorage.getItem('auth_token')}` }
             : {}
           ),
         },

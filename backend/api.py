@@ -1,9 +1,11 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from sqlalchemy import create_engine, text
-# from auth import router as auth_router  # Temporarily disabled due to bcrypt issue
+from sqlalchemy import text
+from auth import router as auth_router
 from api_enhanced import router as enhanced_router
 from clv_api import router as clv_router
+from segmentation_api import router as segmentation_router
+from cross_platform_api import router as cross_platform_router
 
 
 app = FastAPI(
@@ -13,9 +15,18 @@ app = FastAPI(
 )
 
 # Include routers
-# app.include_router(auth_router)  # Temporarily disabled
+app.include_router(auth_router)
 app.include_router(enhanced_router, prefix="/v2", tags=["Enhanced Analytics"])
 app.include_router(clv_router, prefix="/v2", tags=["Customer Lifetime Value"])
+app.include_router(segmentation_router, prefix="/v2", tags=["Customer Segmentation"])
+app.include_router(cross_platform_router, prefix="/v2", tags=["Cross-Platform Analytics"])
+
+# Import and include forecasting router
+try:
+    from forecasting_api import router as forecasting_router
+    app.include_router(forecasting_router, prefix="/v2", tags=["Revenue Forecasting"])
+except ImportError as e:
+    print(f"Warning: Forecasting API not available: {e}")
 
 app.add_middleware(
     CORSMiddleware,
@@ -29,9 +40,8 @@ app.add_middleware(
 def health():
     return {"status": "ok"}
 
-# Database connection string
-DB_URL = "postgresql://nexus_user:nexus_pass@localhost:5432/nexus_db"
-engine = create_engine(DB_URL)
+# Database connection - using centralized database module
+from database import get_database_connection, engine
 
 # Endpoint to fetch all customers
 @app.get("/customers")

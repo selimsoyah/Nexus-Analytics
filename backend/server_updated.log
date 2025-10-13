@@ -1,0 +1,250 @@
+nohup: ignoring input
+INFO:analytics.cross_platform_analytics:Cross-Platform Analytics Engine initialized
+ERROR:prophet.plot:Importing plotly failed. Interactive plots will not work.
+INFO:     Started server process [53007]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8001 (Press CTRL+C to quit)
+WARNING:passlib.handlers.bcrypt:(trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "/home/salim/Desktop/Nexus-Analytics/.venv/lib/python3.12/site-packages/passlib/handlers/bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+INFO:     127.0.0.1:54616 - "POST /token HTTP/1.1" 200 OK
+INFO:forecasting_api:Generating safe forecast for 3 orders, 7 periods
+INFO:     127.0.0.1:54622 - "GET /v2/forecasting/revenue/forecast?forecast_periods=7 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54626 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59898 - "GET /universal/products HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59878 - "GET /universal/analytics/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59882 - "GET /universal/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59912 - "GET /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59916 - "GET /v2/analytics/product-performance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59932 - "GET /v2/analytics/cross-platform-insights HTTP/1.1" 200 OK
+ERROR:forecasting_api:Database query failed: (psycopg2.errors.UndefinedFunction) function strftime(unknown, text) does not exist
+LINE 6:                 strftime('%w', order_date) as day_of_week,
+                        ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+
+[SQL: 
+            SELECT 
+                order_date,
+                SUM(total) as daily_revenue,
+                COUNT(*) as daily_orders,
+                strftime('%%w', order_date) as day_of_week,
+                strftime('%%m', order_date) as month,
+                strftime('%%d', order_date) as day_of_month
+            FROM orders 
+            WHERE order_date::date >= CURRENT_DATE - INTERVAL '1 year'
+            GROUP BY order_date 
+            ORDER BY order_date
+        ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+ERROR:forecasting_api:Error analyzing seasonality: (psycopg2.errors.UndefinedFunction) function strftime(unknown, text) does not exist
+LINE 6:                 strftime('%w', order_date) as day_of_week,
+                        ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+
+[SQL: 
+            SELECT 
+                order_date,
+                SUM(total) as daily_revenue,
+                COUNT(*) as daily_orders,
+                strftime('%%w', order_date) as day_of_week,
+                strftime('%%m', order_date) as month,
+                strftime('%%d', order_date) as day_of_month
+            FROM orders 
+            WHERE order_date::date >= CURRENT_DATE - INTERVAL '1 year'
+            GROUP BY order_date 
+            ORDER BY order_date
+        ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+INFO:     127.0.0.1:59916 - "GET /v2/forecasting/revenue/seasonality HTTP/1.1" 500 Internal Server Error
+ERROR:forecasting_api:Database query failed: (psycopg2.errors.UndefinedFunction) function date(text, unknown) does not exist
+LINE 3:                 DATE(order_date, 'start of month') as period...
+                        ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+
+[SQL: 
+            SELECT 
+                DATE(order_date, 'start of month') as period_date,
+                SUM(total) as total_revenue,
+                COUNT(*) as order_count,
+                AVG(total) as avg_order_value
+            FROM orders 
+            WHERE order_date::date >= CURRENT_DATE - INTERVAL '2 years'
+            GROUP BY DATE(order_date, 'start of month') 
+            ORDER BY period_date
+        ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+ERROR:forecasting_api:Error analyzing revenue trends: (psycopg2.errors.UndefinedFunction) function date(text, unknown) does not exist
+LINE 3:                 DATE(order_date, 'start of month') as period...
+                        ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+
+[SQL: 
+            SELECT 
+                DATE(order_date, 'start of month') as period_date,
+                SUM(total) as total_revenue,
+                COUNT(*) as order_count,
+                AVG(total) as avg_order_value
+            FROM orders 
+            WHERE order_date::date >= CURRENT_DATE - INTERVAL '2 years'
+            GROUP BY DATE(order_date, 'start of month') 
+            ORDER BY period_date
+        ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+INFO:     127.0.0.1:59932 - "GET /v2/forecasting/revenue/trends?period=monthly HTTP/1.1" 500 Internal Server Error
+INFO:forecasting_api:Generating safe forecast for 3 orders, 30 periods
+INFO:     127.0.0.1:59912 - "GET /v2/forecasting/revenue/forecast?forecast_periods=30 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33310 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33310 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33324 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52648 - "OPTIONS /v2/analytics/cross-platform/performance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52662 - "OPTIONS /v2/analytics/cross-platform/kpis HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52676 - "OPTIONS /v2/analytics/cross-platform/recommendations HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52684 - "OPTIONS /v2/analytics/cross-platform/performance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52698 - "OPTIONS /v2/analytics/cross-platform/kpis HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52706 - "OPTIONS /v2/analytics/cross-platform/recommendations HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52706 - "GET /v2/analytics/cross-platform/performance HTTP/1.1" 200 OK
+ERROR:analytics.cross_platform_analytics:Error predicting platform performance: unsupported operand type(s) for -: 'float' and 'decimal.Decimal'
+INFO:     127.0.0.1:52684 - "GET /v2/analytics/cross-platform/recommendations HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52698 - "GET /v2/analytics/cross-platform/kpis HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52676 - "GET /v2/analytics/cross-platform/performance HTTP/1.1" 200 OK
+ERROR:analytics.cross_platform_analytics:Error predicting platform performance: unsupported operand type(s) for -: 'float' and 'decimal.Decimal'
+INFO:     127.0.0.1:52706 - "GET /v2/analytics/cross-platform/recommendations HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52684 - "GET /v2/analytics/cross-platform/kpis HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52706 - "GET /universal/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52676 - "GET /universal/products HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52684 - "GET /universal/analytics/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52662 - "GET /v2/analytics/product-performance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52698 - "GET /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52648 - "GET /v2/analytics/cross-platform-insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52706 - "GET /universal/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52684 - "GET /universal/products HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52698 - "GET /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52676 - "GET /universal/analytics/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52662 - "GET /v2/analytics/product-performance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52648 - "GET /v2/analytics/cross-platform-insights HTTP/1.1" 200 OK
+INFO:analytics.customer_segmentation:Successfully calculated RFM scores for 464 customers
+INFO:analytics.customer_segmentation:Successfully calculated RFM scores for 464 customers
+INFO:     127.0.0.1:52698 - "GET /v2/analytics/segmentation/rfm?include_details=true HTTP/1.1" 200 OK
+INFO:analytics.customer_segmentation:Successfully calculated RFM scores for 464 customers
+INFO:analytics.customer_segmentation:Successfully calculated RFM scores for 464 customers
+INFO:     127.0.0.1:52676 - "GET /v2/analytics/segmentation/rfm?include_details=true HTTP/1.1" 200 OK
+INFO:analytics.customer_segmentation:K-means clustering completed. Silhouette score: 0.389
+INFO:     127.0.0.1:52662 - "GET /v2/analytics/segmentation/ml-clusters?n_clusters=3 HTTP/1.1" 200 OK
+INFO:analytics.customer_segmentation:K-means clustering completed. Silhouette score: 0.339
+INFO:analytics.customer_segmentation:Successfully calculated RFM scores for 464 customers
+INFO:analytics.customer_segmentation:Created 464 customer segment profiles
+INFO:     127.0.0.1:52648 - "GET /v2/analytics/segmentation/summary HTTP/1.1" 200 OK
+INFO:analytics.customer_segmentation:Successfully calculated RFM scores for 464 customers
+INFO:analytics.customer_segmentation:K-means clustering completed. Silhouette score: 0.389
+INFO:     127.0.0.1:52676 - "GET /v2/analytics/segmentation/ml-clusters?n_clusters=3 HTTP/1.1" 200 OK
+INFO:analytics.customer_segmentation:K-means clustering completed. Silhouette score: 0.339
+INFO:analytics.customer_segmentation:Created 464 customer segment profiles
+INFO:     127.0.0.1:52662 - "GET /v2/analytics/segmentation/summary HTTP/1.1" 200 OK
+ERROR:forecasting_api:Database query failed: (psycopg2.errors.UndefinedFunction) function strftime(unknown, text) does not exist
+LINE 6:                 strftime('%w', order_date) as day_of_week,
+                        ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+
+[SQL: 
+            SELECT 
+                order_date,
+                SUM(total) as daily_revenue,
+                COUNT(*) as daily_orders,
+                strftime('%%w', order_date) as day_of_week,
+                strftime('%%m', order_date) as month,
+                strftime('%%d', order_date) as day_of_month
+            FROM orders 
+            WHERE order_date::date >= CURRENT_DATE - INTERVAL '1 year'
+            GROUP BY order_date 
+            ORDER BY order_date
+        ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+ERROR:forecasting_api:Error analyzing seasonality: (psycopg2.errors.UndefinedFunction) function strftime(unknown, text) does not exist
+LINE 6:                 strftime('%w', order_date) as day_of_week,
+                        ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+
+[SQL: 
+            SELECT 
+                order_date,
+                SUM(total) as daily_revenue,
+                COUNT(*) as daily_orders,
+                strftime('%%w', order_date) as day_of_week,
+                strftime('%%m', order_date) as month,
+                strftime('%%d', order_date) as day_of_month
+            FROM orders 
+            WHERE order_date::date >= CURRENT_DATE - INTERVAL '1 year'
+            GROUP BY order_date 
+            ORDER BY order_date
+        ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+INFO:     127.0.0.1:40074 - "GET /v2/forecasting/revenue/seasonality HTTP/1.1" 500 Internal Server Error
+INFO:forecasting_api:Generating safe forecast for 3 orders, 30 periods
+INFO:     127.0.0.1:40068 - "GET /v2/forecasting/revenue/forecast?forecast_periods=30 HTTP/1.1" 200 OK
+ERROR:forecasting_api:Database query failed: (psycopg2.errors.UndefinedFunction) function date(text, unknown) does not exist
+LINE 3:                 DATE(order_date, 'start of month') as period...
+                        ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+
+[SQL: 
+            SELECT 
+                DATE(order_date, 'start of month') as period_date,
+                SUM(total) as total_revenue,
+                COUNT(*) as order_count,
+                AVG(total) as avg_order_value
+            FROM orders 
+            WHERE order_date::date >= CURRENT_DATE - INTERVAL '2 years'
+            GROUP BY DATE(order_date, 'start of month') 
+            ORDER BY period_date
+        ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+ERROR:forecasting_api:Error analyzing revenue trends: (psycopg2.errors.UndefinedFunction) function date(text, unknown) does not exist
+LINE 3:                 DATE(order_date, 'start of month') as period...
+                        ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+
+[SQL: 
+            SELECT 
+                DATE(order_date, 'start of month') as period_date,
+                SUM(total) as total_revenue,
+                COUNT(*) as order_count,
+                AVG(total) as avg_order_value
+            FROM orders 
+            WHERE order_date::date >= CURRENT_DATE - INTERVAL '2 years'
+            GROUP BY DATE(order_date, 'start of month') 
+            ORDER BY period_date
+        ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+INFO:     127.0.0.1:40070 - "GET /v2/forecasting/revenue/trends?period=monthly HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:46354 - "OPTIONS /universal/analytics/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46366 - "OPTIONS /universal/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46368 - "OPTIONS /universal/products HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46384 - "OPTIONS /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46390 - "OPTIONS /v2/analytics/product-performance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46396 - "OPTIONS /v2/analytics/cross-platform-insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46366 - "OPTIONS /universal/analytics/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46384 - "OPTIONS /universal/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46368 - "OPTIONS /universal/products HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46354 - "OPTIONS /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46390 - "OPTIONS /v2/analytics/product-performance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46396 - "OPTIONS /v2/analytics/cross-platform-insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46368 - "GET /universal/products HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46384 - "GET /universal/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46366 - "GET /universal/analytics/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46354 - "GET /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46390 - "GET /v2/analytics/product-performance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46396 - "GET /v2/analytics/cross-platform-insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46368 - "GET /universal/products HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46366 - "GET /universal/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46396 - "GET /v2/analytics/product-performance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46384 - "GET /universal/analytics/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46390 - "GET /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46368 - "GET /v2/analytics/cross-platform-insights HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [53007]

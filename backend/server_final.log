@@ -1,0 +1,205 @@
+nohup: ignoring input
+INFO:analytics.cross_platform_analytics:Cross-Platform Analytics Engine initialized
+ERROR:prophet.plot:Importing plotly failed. Interactive plots will not work.
+INFO:     Started server process [41452]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8001 (Press CTRL+C to quit)
+INFO:     127.0.0.1:56104 - "OPTIONS /universal/analytics/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56120 - "OPTIONS /universal/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56134 - "OPTIONS /universal/products HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56144 - "OPTIONS /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56104 - "OPTIONS /v2/analytics/product-performance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56120 - "OPTIONS /v2/analytics/cross-platform-insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56134 - "OPTIONS /universal/analytics/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56158 - "OPTIONS /universal/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56162 - "OPTIONS /universal/products HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56144 - "OPTIONS /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56104 - "OPTIONS /v2/analytics/product-performance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56120 - "OPTIONS /v2/analytics/cross-platform-insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56162 - "GET /universal/products HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56158 - "GET /universal/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56104 - "GET /v2/analytics/product-performance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56134 - "GET /universal/analytics/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56144 - "GET /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56120 - "GET /v2/analytics/cross-platform-insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56162 - "GET /universal/products HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56158 - "GET /universal/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56104 - "GET /v2/analytics/product-performance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56120 - "GET /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56134 - "GET /universal/analytics/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56144 - "GET /v2/analytics/cross-platform-insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56120 - "OPTIONS /v2/forecasting/revenue/forecast?forecast_periods=30 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56144 - "OPTIONS /v2/forecasting/revenue/trends?period=monthly HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56134 - "OPTIONS /v2/forecasting/revenue/seasonality HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56158 - "OPTIONS /v2/forecasting/revenue/forecast?forecast_periods=30 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56104 - "OPTIONS /v2/forecasting/revenue/trends?period=monthly HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56162 - "OPTIONS /v2/forecasting/revenue/seasonality HTTP/1.1" 200 OK
+INFO:forecasting_api:Generating safe forecast for 3 orders, 30 periods
+INFO:     127.0.0.1:56120 - "GET /v2/forecasting/revenue/forecast?forecast_periods=30 HTTP/1.1" 200 OK
+INFO:forecasting_api:Generating safe forecast for 3 orders, 30 periods
+INFO:     127.0.0.1:56158 - "GET /v2/forecasting/revenue/forecast?forecast_periods=30 HTTP/1.1" 200 OK
+ERROR:forecasting_api:Database query failed: (psycopg2.errors.UndefinedFunction) function strftime(unknown, text) does not exist
+LINE 6:                 strftime('%w', order_date) as day_of_week,
+                        ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+
+[SQL: 
+            SELECT 
+                order_date,
+                SUM(total) as daily_revenue,
+                COUNT(*) as daily_orders,
+                strftime('%%w', order_date) as day_of_week,
+                strftime('%%m', order_date) as month,
+                strftime('%%d', order_date) as day_of_month
+            FROM orders 
+            WHERE order_date::date >= CURRENT_DATE - INTERVAL '1 year'
+            GROUP BY order_date 
+            ORDER BY order_date
+        ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+ERROR:forecasting_api:Error analyzing seasonality: (psycopg2.errors.UndefinedFunction) function strftime(unknown, text) does not exist
+LINE 6:                 strftime('%w', order_date) as day_of_week,
+                        ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+
+[SQL: 
+            SELECT 
+                order_date,
+                SUM(total) as daily_revenue,
+                COUNT(*) as daily_orders,
+                strftime('%%w', order_date) as day_of_week,
+                strftime('%%m', order_date) as month,
+                strftime('%%d', order_date) as day_of_month
+            FROM orders 
+            WHERE order_date::date >= CURRENT_DATE - INTERVAL '1 year'
+            GROUP BY order_date 
+            ORDER BY order_date
+        ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+INFO:     127.0.0.1:56104 - "GET /v2/forecasting/revenue/seasonality HTTP/1.1" 500 Internal Server Error
+ERROR:forecasting_api:Database query failed: (psycopg2.errors.UndefinedFunction) function date(text, unknown) does not exist
+LINE 3:                 DATE(order_date, 'start of month') as period...
+                        ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+
+[SQL: 
+            SELECT 
+                DATE(order_date, 'start of month') as period_date,
+                SUM(total) as total_revenue,
+                COUNT(*) as order_count,
+                AVG(total) as avg_order_value
+            FROM orders 
+            WHERE order_date::date >= CURRENT_DATE - INTERVAL '2 years'
+            GROUP BY DATE(order_date, 'start of month') 
+            ORDER BY period_date
+        ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+ERROR:forecasting_api:Error analyzing revenue trends: (psycopg2.errors.UndefinedFunction) function date(text, unknown) does not exist
+LINE 3:                 DATE(order_date, 'start of month') as period...
+                        ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+
+[SQL: 
+            SELECT 
+                DATE(order_date, 'start of month') as period_date,
+                SUM(total) as total_revenue,
+                COUNT(*) as order_count,
+                AVG(total) as avg_order_value
+            FROM orders 
+            WHERE order_date::date >= CURRENT_DATE - INTERVAL '2 years'
+            GROUP BY DATE(order_date, 'start of month') 
+            ORDER BY period_date
+        ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+INFO:     127.0.0.1:56162 - "GET /v2/forecasting/revenue/trends?period=monthly HTTP/1.1" 500 Internal Server Error
+ERROR:forecasting_api:Database query failed: (psycopg2.errors.UndefinedFunction) function strftime(unknown, text) does not exist
+LINE 6:                 strftime('%w', order_date) as day_of_week,
+                        ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+
+[SQL: 
+            SELECT 
+                order_date,
+                SUM(total) as daily_revenue,
+                COUNT(*) as daily_orders,
+                strftime('%%w', order_date) as day_of_week,
+                strftime('%%m', order_date) as month,
+                strftime('%%d', order_date) as day_of_month
+            FROM orders 
+            WHERE order_date::date >= CURRENT_DATE - INTERVAL '1 year'
+            GROUP BY order_date 
+            ORDER BY order_date
+        ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+ERROR:forecasting_api:Error analyzing seasonality: (psycopg2.errors.UndefinedFunction) function strftime(unknown, text) does not exist
+LINE 6:                 strftime('%w', order_date) as day_of_week,
+                        ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+
+[SQL: 
+            SELECT 
+                order_date,
+                SUM(total) as daily_revenue,
+                COUNT(*) as daily_orders,
+                strftime('%%w', order_date) as day_of_week,
+                strftime('%%m', order_date) as month,
+                strftime('%%d', order_date) as day_of_month
+            FROM orders 
+            WHERE order_date::date >= CURRENT_DATE - INTERVAL '1 year'
+            GROUP BY order_date 
+            ORDER BY order_date
+        ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+INFO:     127.0.0.1:56158 - "GET /v2/forecasting/revenue/seasonality HTTP/1.1" 500 Internal Server Error
+ERROR:forecasting_api:Database query failed: (psycopg2.errors.UndefinedFunction) function date(text, unknown) does not exist
+LINE 3:                 DATE(order_date, 'start of month') as period...
+                        ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+
+[SQL: 
+            SELECT 
+                DATE(order_date, 'start of month') as period_date,
+                SUM(total) as total_revenue,
+                COUNT(*) as order_count,
+                AVG(total) as avg_order_value
+            FROM orders 
+            WHERE order_date::date >= CURRENT_DATE - INTERVAL '2 years'
+            GROUP BY DATE(order_date, 'start of month') 
+            ORDER BY period_date
+        ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+ERROR:forecasting_api:Error analyzing revenue trends: (psycopg2.errors.UndefinedFunction) function date(text, unknown) does not exist
+LINE 3:                 DATE(order_date, 'start of month') as period...
+                        ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+
+[SQL: 
+            SELECT 
+                DATE(order_date, 'start of month') as period_date,
+                SUM(total) as total_revenue,
+                COUNT(*) as order_count,
+                AVG(total) as avg_order_value
+            FROM orders 
+            WHERE order_date::date >= CURRENT_DATE - INTERVAL '2 years'
+            GROUP BY DATE(order_date, 'start of month') 
+            ORDER BY period_date
+        ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+INFO:     127.0.0.1:56104 - "GET /v2/forecasting/revenue/trends?period=monthly HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:41398 - "GET /universal/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41430 - "GET /v2/analytics/product-performance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41382 - "GET /universal/analytics/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41410 - "GET /universal/products HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41436 - "GET /v2/analytics/cross-platform-insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41424 - "GET /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41436 - "GET /universal/products HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41430 - "GET /universal/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41398 - "GET /v2/analytics/product-performance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41382 - "GET /universal/analytics/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41410 - "GET /v2/analytics/cross-platform-insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41436 - "GET /universal/orders HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [41452]

@@ -1,0 +1,82 @@
+nohup: ignoring input
+INFO:analytics.cross_platform_analytics:Cross-Platform Analytics Engine initialized
+ERROR:prophet.plot:Importing plotly failed. Interactive plots will not work.
+INFO:     Started server process [372367]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8001 (Press CTRL+C to quit)
+INFO:     127.0.0.1:43396 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40294 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57440 - "GET /docs HTTP/1.1" 200 OK
+WARNING:passlib.handlers.bcrypt:(trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "/home/salim/Desktop/Nexus-Analytics/.venv/lib/python3.12/site-packages/passlib/handlers/bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+INFO:     127.0.0.1:57444 - "POST /token HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57450 - "GET /v2/analytics/forecasting/revenue/forecast?periods=30 HTTP/1.1" 404 Not Found
+INFO:analytics.customer_segmentation:Successfully calculated RFM scores for 464 customers
+INFO:analytics.customer_segmentation:K-means clustering completed. Silhouette score: 0.339
+INFO:analytics.customer_segmentation:Created 464 customer segment profiles
+INFO:     127.0.0.1:57458 - "GET /v2/analytics/segmentation/summary HTTP/1.1" 200 OK
+INFO:analytics.clv_calculator:Calculating CLV for 100 customers
+INFO:analytics.clv_calculator:Successfully calculated CLV for 100 customers
+INFO:     127.0.0.1:57462 - "GET /v2/analytics/clv/bulk HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55762 - "POST /token HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55762 - "OPTIONS /me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55762 - "GET /me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55762 - "OPTIONS /universal/analytics/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60092 - "OPTIONS /universal/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55762 - "OPTIONS /universal/products HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60108 - "OPTIONS /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60110 - "OPTIONS /v2/analytics/product-performance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60122 - "OPTIONS /v2/analytics/cross-platform-insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60124 - "OPTIONS /universal/analytics/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60092 - "OPTIONS /universal/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55762 - "OPTIONS /universal/products HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60108 - "OPTIONS /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60110 - "OPTIONS /v2/analytics/product-performance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60122 - "OPTIONS /v2/analytics/cross-platform-insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60124 - "GET /universal/analytics/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60122 - "GET /universal/products HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60108 - "GET /v2/analytics/product-performance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60092 - "GET /universal/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55762 - "GET /v2/analytics/cross-platform-insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60110 - "GET /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60124 - "GET /universal/analytics/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60122 - "GET /universal/products HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55762 - "GET /universal/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60108 - "GET /v2/analytics/product-performance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60092 - "GET /v2/analytics/cross-platform-insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60124 - "GET /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45774 - "GET /universal/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45786 - "GET /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45788 - "GET /universal/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45774 - "GET /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45786 - "GET /universal/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45788 - "GET /universal/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45786 - "GET /universal/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45788 - "GET /universal/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36446 - "GET /universal/products HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36454 - "GET /universal/products HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36444 - "GET /v2/analytics/product-performance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36454 - "GET /v2/analytics/product-performance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36444 - "GET /v2/analytics/product-performance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36454 - "GET /v2/analytics/product-performance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36444 - "GET /v2/analytics/product-performance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36454 - "GET /v2/analytics/product-performance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39320 - "GET /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39334 - "GET /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39320 - "GET /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39340 - "GET /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39356 - "GET /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39364 - "GET /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39372 - "GET /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39334 - "GET /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38374 - "OPTIONS /v2/forecasting/revenue/forecast?forecast_periods=30 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38382 - "OPTIONS /v2/forecasting/revenue/trends?period=monthly HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38396 - "OPTIONS /v2/forecasting/revenue/seasonality HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38398 - "OPTIONS /v2/forecasting/revenue/forecast?forecast_periods=30 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38414 - "OPTIONS /v2/forecasting/revenue/trends?period=monthly HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38422 - "OPTIONS /v2/forecasting/revenue/seasonality HTTP/1.1" 200 OK

@@ -84,3 +84,7 @@ INFO:analytics.clv_calculator:Successfully calculated CLV for 3 customers
 INFO:     127.0.0.1:37532 - "GET /v2/analytics/clv/segments?limit=200 HTTP/1.1" 200 OK
 INFO:     127.0.0.1:37526 - "GET /v2/analytics/clv/platform-summary HTTP/1.1" 200 OK
 INFO:     127.0.0.1:37526 - "GET /v2/analytics/clv/platform-summary HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [364628]
