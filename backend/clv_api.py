@@ -11,6 +11,7 @@ from datetime import datetime
 import logging
 
 from analytics.clv_calculator import CLVCalculator, CLVMetrics
+from advanced_clv import get_advanced_clv_insights, AdvancedCLVPredictor
 
 # Setup logging
 logging.basicConfig(level=logging.INFO)
@@ -457,5 +458,242 @@ def _generate_trend_recommendations(platform_data: Dict) -> List[str]:
         recommendations.append("Monitor customer satisfaction metrics closely")
     else:
         recommendations.append("Continue current retention strategies")
+    
+    return recommendations
+
+# ========== ADVANCED ML CLV ENDPOINTS ==========
+
+@router.get("/analytics/clv/ml-predictions")
+def get_ml_clv_predictions():
+    """
+    Get ML-powered CLV predictions with confidence intervals and feature importance
+    
+    Returns comprehensive analysis including:
+    - Model performance metrics
+    - Customer segment CLV analysis
+    - Top value customer predictions
+    - Actionable recommendations
+    """
+    try:
+        results = get_advanced_clv_insights()
+        
+        if 'error' in results:
+            return {
+                "status": "fallback",
+                "message": results['error'],
+                "data": results
+            }
+        
+        return {
+            "status": "success",
+            "message": "ML CLV predictions generated successfully",
+            "data": results,
+            "timestamp": datetime.now().isoformat()
+        }
+        
+    except Exception as e:
+        logger.error(f"ML CLV prediction failed: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Failed to generate ML CLV predictions: {str(e)}")
+
+@router.get("/analytics/clv/predictive-insights")
+def get_predictive_clv_insights(
+    segment: Optional[str] = Query(None, description="Filter by customer segment"),
+    platform: Optional[str] = Query(None, description="Filter by platform"),
+    min_confidence: Optional[float] = Query(0.7, description="Minimum prediction confidence")
+):
+    """
+    Get predictive CLV insights with filtering capabilities
+    
+    Parameters:
+    - segment: Filter results by customer segment
+    - platform: Filter results by platform  
+    - min_confidence: Minimum prediction confidence threshold
+    """
+    try:
+        predictor = AdvancedCLVPredictor()
+        
+        # Get comprehensive analysis
+        analysis_results = predictor.analyze_customer_segments()
+        
+        if 'error' in analysis_results:
+            return {
+                "status": "error",
+                "message": analysis_results['error']
+            }
+        
+        # Apply filters if provided
+        filtered_results = analysis_results.copy()
+        
+        if 'high_confidence_predictions' in filtered_results:
+            predictions = filtered_results['high_confidence_predictions']
+            
+            if segment:
+                predictions = [p for p in predictions if p.get('segment_name') == segment]
+            
+            if platform:
+                predictions = [p for p in predictions if p.get('platform') == platform]
+            
+            if min_confidence:
+                predictions = [p for p in predictions if p.get('clv_confidence', 0) >= min_confidence]
+            
+            filtered_results['filtered_predictions'] = predictions
+            filtered_results['filter_applied'] = {
+                'segment': segment,
+                'platform': platform,
+                'min_confidence': min_confidence,
+                'results_count': len(predictions)
+            }
+        
+        return {
+            "status": "success",
+            "data": filtered_results,
+            "timestamp": datetime.now().isoformat()
+        }
+        
+    except Exception as e:
+        logger.error(f"Predictive CLV insights failed: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Failed to generate predictive insights: {str(e)}")
+
+@router.get("/analytics/clv/model-performance")
+def get_clv_model_performance():
+    """
+    Get detailed performance metrics of the ML CLV prediction models
+    
+    Returns:
+    - Model accuracy metrics (MAE, RMSE, R²)
+    - Feature importance rankings
+    - Training data statistics
+    - Model comparison results
+    """
+    try:
+        predictor = AdvancedCLVPredictor()
+        training_results = predictor.train_models()
+        
+        return {
+            "status": "success",
+            "message": "Model performance metrics retrieved successfully",
+            "data": {
+                "training_summary": training_results['training_summary'],
+                "model_performance": training_results['model_performance'],
+                "feature_importance": training_results.get('feature_importance', {}),
+                "model_descriptions": {
+                    "random_forest": "Ensemble of decision trees, good for non-linear patterns",
+                    "gradient_boost": "Sequential boosting model, excellent for complex relationships", 
+                    "linear": "Linear regression baseline, interpretable and fast"
+                },
+                "performance_interpretation": {
+                    "mae": "Mean Absolute Error - average prediction error in currency units",
+                    "rmse": "Root Mean Square Error - penalizes larger prediction errors",
+                    "r2": "R-squared - proportion of variance explained by the model (higher is better)"
+                }
+            },
+            "timestamp": datetime.now().isoformat()
+        }
+        
+    except Exception as e:
+        logger.error(f"Model performance retrieval failed: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Failed to get model performance: {str(e)}")
+
+@router.post("/analytics/clv/predict-customer")
+def predict_customer_clv(customer_data: dict):
+    """
+    Predict CLV for a specific customer using ML models
+    
+    Expected input format:
+    {
+        "frequency": 5,
+        "monetary": 1250.00,
+        "recency_days": 45,
+        "platform": "shopify"
+    }
+    
+    Returns prediction with confidence intervals and risk assessment
+    """
+    try:
+        # Validate required fields
+        required_fields = ['frequency', 'monetary', 'recency_days']
+        for field in required_fields:
+            if field not in customer_data:
+                raise HTTPException(status_code=400, detail=f"Missing required field: {field}")
+        
+        predictor = AdvancedCLVPredictor()
+        if not predictor.is_trained:
+            predictor.train_models()
+        
+        # Convert to DataFrame for prediction
+        import pandas as pd
+        df = pd.DataFrame([customer_data])
+        
+        # Make prediction
+        prediction = predictor.predict_clv(df)
+        
+        # Extract single customer results
+        result = {
+            "predicted_clv": float(prediction['predicted_clv'][0]),
+            "confidence_interval": {
+                "lower": float(prediction['confidence_lower'][0]),
+                "upper": float(prediction['confidence_upper'][0])
+            },
+            "prediction_confidence": float(prediction['prediction_confidence'][0]),
+            "risk_assessment": {
+                "churn_risk": "high" if customer_data['recency_days'] > 90 else "medium" if customer_data['recency_days'] > 60 else "low",
+                "value_tier": "high" if customer_data['monetary'] > 1000 else "medium" if customer_data['monetary'] > 300 else "low"
+            },
+            "recommendations": _generate_customer_recommendations(customer_data, prediction)
+        }
+        
+        return {
+            "status": "success",
+            "message": "Customer CLV predicted successfully",
+            "data": result,
+            "timestamp": datetime.now().isoformat()
+        }
+        
+    except Exception as e:
+        logger.error(f"Customer CLV prediction failed: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Failed to predict customer CLV: {str(e)}")
+
+def _generate_customer_recommendations(customer_data, prediction):
+    """Generate personalized recommendations based on customer data and CLV prediction"""
+    recommendations = []
+    
+    predicted_clv = float(prediction['predicted_clv'][0])
+    confidence = float(prediction['prediction_confidence'][0])
+    
+    # High-value customer recommendations
+    if predicted_clv > 2000:
+        recommendations.append({
+            "type": "retention",
+            "priority": "high", 
+            "action": "Enroll in VIP program with exclusive benefits",
+            "reason": f"High predicted CLV of ${predicted_clv:.2f}"
+        })
+    
+    # Frequency-based recommendations
+    if customer_data['frequency'] >= 5:
+        recommendations.append({
+            "type": "loyalty",
+            "priority": "medium",
+            "action": "Offer loyalty rewards and referral bonuses",
+            "reason": "High purchase frequency indicates loyalty"
+        })
+    
+    # Recency-based recommendations  
+    if customer_data['recency_days'] > 60:
+        recommendations.append({
+            "type": "re-engagement",
+            "priority": "high",
+            "action": "Launch win-back campaign with personalized offers",
+            "reason": f"Customer inactive for {customer_data['recency_days']} days"
+        })
+    
+    # Confidence-based recommendations
+    if confidence < 0.6:
+        recommendations.append({
+            "type": "data_collection",
+            "priority": "low",
+            "action": "Collect more customer interaction data to improve predictions",
+            "reason": f"Low prediction confidence ({confidence:.2f})"
+        })
     
     return recommendations

@@ -36,4 +36,4 @@ def run_etl(customers_csv, orders_csv, order_items_csv, db_url):
 
     print('ETL complete. Sales totals and customer segments calculated.')
 
-run_etl('backend/customers.csv', 'backend/orders.csv', 'backend/order_items.csv', 'postgresql://nexus_user:nexus_pass@localhost:5432/nexus_db')
+run_etl('backend/customers.csv', 'backend/orders.csv', 'backend/order_items.csv', 'postgresql://nexus_user:nexus_pass@localhost:5432/nexus_db')                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             

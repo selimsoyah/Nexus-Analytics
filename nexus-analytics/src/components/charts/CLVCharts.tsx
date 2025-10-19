@@ -340,22 +340,34 @@ export const CLVAnalytics: React.FC<{ filters: any }> = ({ filters }) => {
       setError(null);
       
       try {
+        // Get authentication token
+        const token = typeof window !== 'undefined' ? localStorage.getItem('auth_token') : null;
+        if (!token) {
+          throw new Error('Authentication required');
+        }
+
         // Build query parameters
         const params = new URLSearchParams();
         if (filters.platform) params.append('platform', filters.platform);
         params.append('limit', '200'); // Get a good sample size
         
         // Base API URL - same as other hooks
-        const API_BASE_URL = 'http://localhost:8000';
+        const API_BASE_URL = 'http://localhost:8001';
+
+        // Headers with authentication
+        const headers = {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json'
+        };
 
         // Fetch bulk CLV data
-        const clvResponse = await fetch(`${API_BASE_URL}/v2/analytics/clv/bulk?${params}`);
+        const clvResponse = await fetch(`${API_BASE_URL}/v2/analytics/clv/bulk?${params}`, { headers });
         if (!clvResponse.ok) throw new Error('Failed to fetch CLV data');
         const clvResult = await clvResponse.json();
         setCLVData(clvResult.customers || []);
 
         // Fetch segments analysis
-        const segmentsResponse = await fetch(`${API_BASE_URL}/v2/analytics/clv/segments?${params}`);
+        const segmentsResponse = await fetch(`${API_BASE_URL}/v2/analytics/clv/segments?${params}`, { headers });
         if (!segmentsResponse.ok) throw new Error('Failed to fetch segments data');
         const segmentsResult = await segmentsResponse.json();
         setSegmentsData(segmentsResult.segments || []);
@@ -364,7 +376,7 @@ export const CLVAnalytics: React.FC<{ filters: any }> = ({ filters }) => {
         const platformParams = new URLSearchParams();
         if (filters.platform) platformParams.append('platform', filters.platform);
         
-        const platformResponse = await fetch(`${API_BASE_URL}/v2/analytics/clv/platform-summary?${platformParams}`);
+        const platformResponse = await fetch(`${API_BASE_URL}/v2/analytics/clv/platform-summary?${platformParams}`, { headers });
         if (!platformResponse.ok) throw new Error('Failed to fetch platform data');
         const platformResult = await platformResponse.json();
         setPlatformData(platformResult.platform_summaries || []);

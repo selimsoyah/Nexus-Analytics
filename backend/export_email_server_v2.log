@@ -1,0 +1,101 @@
+nohup: ignoring input
+INFO:analytics.cross_platform_analytics:Cross-Platform Analytics Engine initialized
+INFO:integrations.ai_insights:✅ AI-Powered Insight Generation Engine loaded successfully
+INFO:integrations.report_engine:AI Insights engine imported successfully
+INFO:integrations.report_engine:Database connection established for report generation
+INFO:integrations.report_engine:✅ Enhanced Report Generation System loaded successfully
+INFO:integrations.report_api:Report engine imported successfully
+INFO:integrations.report_api:✅ Enhanced Report Generation API with Export/Email functionality loaded successfully
+INFO:shopify_connector:Shopify tables created successfully
+INFO:analytics.cross_platform_analytics:Cross-Platform Analytics Engine initialized
+INFO:     Started server process [691526]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8001 (Press CTRL+C to quit)
+✅ Enhanced Report Generation System API loaded successfully
+✅ Enhanced Alert System API loaded successfully
+✅ Multi-Channel Notification System API loaded successfully
+✅ Enhanced Report Generation System API loaded successfully
+🚀 Starting Enhanced Nexus Analytics Server...
+INFO:     127.0.0.1:51618 - "POST /v2/reports/export HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49550 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54766 - "OPTIONS /v2/reports/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54766 - "GET /v2/reports/health HTTP/1.1" 200 OK
+INFO:integrations.report_engine:Generating customer analytics report
+INFO:integrations.ai_insights:Generated 2 customer insights
+INFO:integrations.report_engine:Customer analytics report generated successfully: customer_analytics_20251019_232124
+INFO:     127.0.0.1:54766 - "GET /v2/reports/customer-analytics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54766 - "OPTIONS /v2/reports/export HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54766 - "POST /v2/reports/export HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52212 - "POST /v2/reports/export HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52212 - "POST /v2/reports/export HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52212 - "POST /v2/reports/export HTTP/1.1" 200 OK
+INFO:analytics.customer_segmentation:Successfully calculated RFM scores for 464 customers
+INFO:analytics.customer_segmentation:K-means clustering completed. Silhouette score: 0.339
+INFO:analytics.customer_segmentation:Created 464 customer segment profiles
+INFO:     127.0.0.1:53418 - "GET /v2/analytics/segmentation/summary HTTP/1.1" 200 OK
+INFO:analytics.customer_segmentation:Successfully calculated RFM scores for 464 customers
+INFO:analytics.customer_segmentation:K-means clustering completed. Silhouette score: 0.339
+INFO:analytics.customer_segmentation:Created 464 customer segment profiles
+INFO:     127.0.0.1:53422 - "GET /v2/analytics/segmentation/summary HTTP/1.1" 200 OK
+INFO:analytics.customer_segmentation:Successfully calculated RFM scores for 464 customers
+INFO:analytics.customer_segmentation:Successfully calculated RFM scores for 464 customers
+INFO:analytics.customer_segmentation:Successfully calculated RFM scores for 464 customers
+INFO:     127.0.0.1:53418 - "GET /v2/analytics/segmentation/rfm?include_details=true HTTP/1.1" 200 OK
+INFO:analytics.customer_segmentation:Successfully calculated RFM scores for 464 customers
+INFO:     127.0.0.1:53448 - "GET /v2/analytics/segmentation/rfm?include_details=true HTTP/1.1" 200 OK
+INFO:analytics.customer_segmentation:K-means clustering completed. Silhouette score: 0.389
+INFO:     127.0.0.1:53432 - "GET /v2/analytics/segmentation/ml-clusters?n_clusters=3 HTTP/1.1" 200 OK
+INFO:analytics.customer_segmentation:K-means clustering completed. Silhouette score: 0.339
+INFO:analytics.customer_segmentation:Created 464 customer segment profiles
+INFO:analytics.customer_segmentation:Successfully calculated RFM scores for 464 customers
+INFO:     127.0.0.1:53422 - "GET /v2/analytics/segmentation/summary HTTP/1.1" 200 OK
+INFO:analytics.customer_segmentation:Successfully calculated RFM scores for 464 customers
+INFO:analytics.customer_segmentation:K-means clustering completed. Silhouette score: 0.389
+INFO:     127.0.0.1:53448 - "GET /v2/analytics/segmentation/ml-clusters?n_clusters=3 HTTP/1.1" 200 OK
+INFO:analytics.customer_segmentation:K-means clustering completed. Silhouette score: 0.339
+INFO:analytics.customer_segmentation:Created 464 customer segment profiles
+INFO:     127.0.0.1:53432 - "GET /v2/analytics/segmentation/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41990 - "OPTIONS /v2/reports/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41990 - "GET /v2/reports/health HTTP/1.1" 200 OK
+INFO:integrations.report_engine:Generating customer analytics report
+INFO:integrations.ai_insights:Generated 2 customer insights
+INFO:integrations.report_engine:Customer analytics report generated successfully: customer_analytics_20251019_232205
+INFO:     127.0.0.1:41990 - "GET /v2/reports/customer-analytics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52040 - "OPTIONS /v2/reports/email HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52040 - "POST /v2/reports/email HTTP/1.1" 200 OK
+INFO:integrations.report_api:📧 Sending email report to 1 recipients
+INFO:integrations.report_api:   Subject: 📊 Customer Analytics Report
+INFO:integrations.report_api:   Format: pdf
+INFO:integrations.report_api:   Recipients: selimsoyah86@gmail.com
+INFO:integrations.report_api:   ✅ Email sent to selimsoyah86@gmail.com
+INFO:     127.0.0.1:49160 - "POST /v2/reports/email HTTP/1.1" 200 OK
+INFO:integrations.report_api:📧 Sending email report to 1 recipients
+INFO:integrations.report_api:   Subject: 📊 Customer Analytics Report
+INFO:integrations.report_api:   Format: pdf
+INFO:integrations.report_api:   Recipients: selimsoyah86@gmail.com
+INFO:integrations.report_api:   ✅ Email sent to selimsoyah86@gmail.com
+INFO:     127.0.0.1:32930 - "POST /v2/reports/export HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44764 - "POST /v2/reports/export HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48002 - "OPTIONS /v2/reports/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48002 - "GET /v2/reports/health HTTP/1.1" 200 OK
+INFO:integrations.report_engine:Generating customer analytics report
+INFO:integrations.ai_insights:Generated 2 customer insights
+INFO:integrations.report_engine:Customer analytics report generated successfully: customer_analytics_20251019_233642
+INFO:     127.0.0.1:60912 - "GET /v2/reports/customer-analytics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60912 - "OPTIONS /v2/reports/export HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60912 - "POST /v2/reports/export HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60912 - "POST /v2/reports/export HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60912 - "POST /v2/reports/export HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60912 - "POST /v2/reports/export HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36780 - "OPTIONS /v2/reports/email HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36780 - "POST /v2/reports/email HTTP/1.1" 200 OK
+INFO:integrations.report_api:📧 Sending email report to 1 recipients
+INFO:integrations.report_api:   Subject: 📊 Customer Analytics Report
+INFO:integrations.report_api:   Format: pdf
+INFO:integrations.report_api:   Recipients: selimsoyah86@gmail.com
+INFO:integrations.report_api:   ✅ Email sent to selimsoyah86@gmail.com
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [691526]

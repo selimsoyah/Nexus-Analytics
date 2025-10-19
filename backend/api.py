@@ -28,6 +28,45 @@ try:
 except ImportError as e:
     print(f"Warning: Forecasting API not available: {e}")
 
+# Import and include report generation router
+try:
+    from integrations.report_api import router as report_router
+    app.include_router(report_router, tags=["Report Generation"])
+    print("✅ Enhanced Report Generation System API loaded successfully")
+except ImportError as e:
+    print(f"Warning: Report Generation API not available: {e}")
+
+# Import and include Shopify integration router
+try:
+    from shopify_api import router as shopify_router
+    app.include_router(shopify_router, prefix="/v2", tags=["Shopify Integration"])
+except ImportError as e:
+    print(f"Warning: Shopify API not available: {e}")
+
+# Import and include enhanced alert system router
+try:
+    from integrations.enhanced_alert_api import router as enhanced_alert_router
+    app.include_router(enhanced_alert_router, prefix="/v2", tags=["Enhanced Alert System"])
+    print("✅ Enhanced Alert System API loaded successfully")
+except ImportError as e:
+    print(f"Warning: Enhanced Alert System API not available: {e}")
+
+# Import and include notification system router
+try:
+    from integrations.notification_api import router as notification_router
+    app.include_router(notification_router, prefix="/v2", tags=["Multi-Channel Notifications"])
+    print("✅ Multi-Channel Notification System API loaded successfully")
+except ImportError as e:
+    print(f"Warning: Multi-Channel Notification System API not available: {e}")
+
+# Import and include report generation system router
+try:
+    from integrations.report_api import router as report_router
+    app.include_router(report_router, prefix="/v2", tags=["Automated Report Generation"])
+    print("✅ Enhanced Report Generation System API loaded successfully")
+except ImportError as e:
+    print(f"Warning: Report Generation System API not available: {e}")
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -207,3 +246,8 @@ def get_cross_platform_overview():
             "recent_activity": [dict(row) for row in recent_orders.mappings()],
             "timestamp": "2024-01-01T00:00:00"
         }
+
+if __name__ == "__main__":
+    import uvicorn
+    print("🚀 Starting Enhanced Nexus Analytics Server...")
+    uvicorn.run(app, host="0.0.0.0", port=8001)

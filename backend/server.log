@@ -1,82 +1,479 @@
 nohup: ignoring input
 INFO:analytics.cross_platform_analytics:Cross-Platform Analytics Engine initialized
-ERROR:prophet.plot:Importing plotly failed. Interactive plots will not work.
-INFO:     Started server process [372367]
+INFO:integrations.ai_insights:✅ AI-Powered Insight Generation Engine loaded successfully
+INFO:integrations.report_engine:AI Insights engine imported successfully
+INFO:integrations.report_engine:Database connection established for report generation
+INFO:integrations.report_engine:✅ Enhanced Report Generation System loaded successfully
+INFO:integrations.report_api:Report engine imported successfully
+INFO:integrations.report_api:✅ Enhanced Report Generation API loaded successfully
+INFO:shopify_connector:Shopify tables created successfully
+INFO:analytics.cross_platform_analytics:Cross-Platform Analytics Engine initialized
+INFO:     Started server process [549605]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8001 (Press CTRL+C to quit)
-INFO:     127.0.0.1:43396 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40294 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57440 - "GET /docs HTTP/1.1" 200 OK
-WARNING:passlib.handlers.bcrypt:(trapped) error reading bcrypt version
-Traceback (most recent call last):
-  File "/home/salim/Desktop/Nexus-Analytics/.venv/lib/python3.12/site-packages/passlib/handlers/bcrypt.py", line 620, in _load_backend_mixin
-    version = _bcrypt.__about__.__version__
-              ^^^^^^^^^^^^^^^^^
-AttributeError: module 'bcrypt' has no attribute '__about__'
-INFO:     127.0.0.1:57444 - "POST /token HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57450 - "GET /v2/analytics/forecasting/revenue/forecast?periods=30 HTTP/1.1" 404 Not Found
-INFO:analytics.customer_segmentation:Successfully calculated RFM scores for 464 customers
-INFO:analytics.customer_segmentation:K-means clustering completed. Silhouette score: 0.339
-INFO:analytics.customer_segmentation:Created 464 customer segment profiles
-INFO:     127.0.0.1:57458 - "GET /v2/analytics/segmentation/summary HTTP/1.1" 200 OK
-INFO:analytics.clv_calculator:Calculating CLV for 100 customers
-INFO:analytics.clv_calculator:Successfully calculated CLV for 100 customers
-INFO:     127.0.0.1:57462 - "GET /v2/analytics/clv/bulk HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55762 - "POST /token HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55762 - "OPTIONS /me HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55762 - "GET /me HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55762 - "OPTIONS /universal/analytics/overview HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60092 - "OPTIONS /universal/customers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55762 - "OPTIONS /universal/products HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60108 - "OPTIONS /universal/orders HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60110 - "OPTIONS /v2/analytics/product-performance HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60122 - "OPTIONS /v2/analytics/cross-platform-insights HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60124 - "OPTIONS /universal/analytics/overview HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60092 - "OPTIONS /universal/customers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55762 - "OPTIONS /universal/products HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60108 - "OPTIONS /universal/orders HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60110 - "OPTIONS /v2/analytics/product-performance HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60122 - "OPTIONS /v2/analytics/cross-platform-insights HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60124 - "GET /universal/analytics/overview HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60122 - "GET /universal/products HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60108 - "GET /v2/analytics/product-performance HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60092 - "GET /universal/customers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55762 - "GET /v2/analytics/cross-platform-insights HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60110 - "GET /universal/orders HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60124 - "GET /universal/analytics/overview HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60122 - "GET /universal/products HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55762 - "GET /universal/customers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60108 - "GET /v2/analytics/product-performance HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60092 - "GET /v2/analytics/cross-platform-insights HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60124 - "GET /universal/orders HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45774 - "GET /universal/customers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45786 - "GET /universal/orders HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45788 - "GET /universal/customers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45774 - "GET /universal/orders HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45786 - "GET /universal/customers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45788 - "GET /universal/customers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45786 - "GET /universal/customers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45788 - "GET /universal/customers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36446 - "GET /universal/products HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36454 - "GET /universal/products HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36444 - "GET /v2/analytics/product-performance HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36454 - "GET /v2/analytics/product-performance HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36444 - "GET /v2/analytics/product-performance HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36454 - "GET /v2/analytics/product-performance HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36444 - "GET /v2/analytics/product-performance HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36454 - "GET /v2/analytics/product-performance HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39320 - "GET /universal/orders HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39334 - "GET /universal/orders HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39320 - "GET /universal/orders HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39340 - "GET /universal/orders HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39356 - "GET /universal/orders HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39364 - "GET /universal/orders HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39372 - "GET /universal/orders HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39334 - "GET /universal/orders HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38374 - "OPTIONS /v2/forecasting/revenue/forecast?forecast_periods=30 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38382 - "OPTIONS /v2/forecasting/revenue/trends?period=monthly HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38396 - "OPTIONS /v2/forecasting/revenue/seasonality HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38398 - "OPTIONS /v2/forecasting/revenue/forecast?forecast_periods=30 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38414 - "OPTIONS /v2/forecasting/revenue/trends?period=monthly HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38422 - "OPTIONS /v2/forecasting/revenue/seasonality HTTP/1.1" 200 OK
+✅ Enhanced Report Generation System API loaded successfully
+✅ Enhanced Alert System API loaded successfully
+✅ Multi-Channel Notification System API loaded successfully
+✅ Enhanced Report Generation System API loaded successfully
+🚀 Starting Enhanced Nexus Analytics Server...
+INFO:     127.0.0.1:50808 - "GET /v2/reports/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42654 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42654 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42656 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38936 - "OPTIONS /v2/analytics/cross-platform/performance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38942 - "OPTIONS /v2/analytics/cross-platform/kpis HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38956 - "OPTIONS /v2/analytics/cross-platform/recommendations HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38968 - "OPTIONS /v2/analytics/cross-platform/performance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38936 - "OPTIONS /v2/analytics/cross-platform/kpis HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38972 - "OPTIONS /v2/analytics/cross-platform/recommendations HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38956 - "GET /v2/analytics/cross-platform/performance HTTP/1.1" 200 OK
+ERROR:analytics.cross_platform_analytics:Error predicting platform performance: unsupported operand type(s) for -: 'float' and 'decimal.Decimal'
+INFO:     127.0.0.1:38942 - "GET /v2/analytics/cross-platform/recommendations HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38968 - "GET /v2/analytics/cross-platform/kpis HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38972 - "GET /v2/analytics/cross-platform/performance HTTP/1.1" 200 OK
+ERROR:analytics.cross_platform_analytics:Error predicting platform performance: unsupported operand type(s) for -: 'float' and 'decimal.Decimal'
+INFO:     127.0.0.1:38956 - "GET /v2/analytics/cross-platform/recommendations HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38942 - "GET /v2/analytics/cross-platform/kpis HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38982 - "GET /v2/reports/health HTTP/1.1" 200 OK
+INFO:integrations.report_api:Testing report generation: daily_sales
+INFO:integrations.report_engine:Generating daily sales report for 2025-10-19
+ERROR:integrations.ai_insights:Error analyzing revenue performance: BusinessInsight.__init__() got an unexpected keyword argument 'confidence'
+INFO:integrations.ai_insights:Generated 2 sales insights
+INFO:integrations.report_engine:Daily sales report generated successfully: daily_sales_20251019
+INFO:     127.0.0.1:38982 - "GET /v2/reports/test?report_type=daily_sales HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38036 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60410 - "GET /v2/analytics/cross-platform/performance HTTP/1.1" 200 OK
+ERROR:analytics.cross_platform_analytics:Error predicting platform performance: unsupported operand type(s) for -: 'float' and 'decimal.Decimal'
+INFO:     127.0.0.1:60432 - "GET /v2/analytics/cross-platform/recommendations HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60420 - "GET /v2/analytics/cross-platform/kpis HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60438 - "GET /v2/reports/health HTTP/1.1" 200 OK
+INFO:integrations.report_api:Testing report generation: customer_analytics
+INFO:integrations.report_engine:Generating customer analytics report
+ERROR:integrations.report_engine:Query execution failed: (psycopg2.errors.UndefinedColumn) column "name" does not exist
+LINE 3:             name,
+                    ^
+
+[SQL: 
+        SELECT 
+            name,
+            segment,
+            order_total,
+            customer_id
+        FROM customer_segments 
+        ORDER BY order_total DESC
+        LIMIT 10
+        ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+INFO:integrations.ai_insights:Generated 2 customer insights
+INFO:integrations.report_engine:Customer analytics report generated successfully: customer_analytics_20251019_222253
+INFO:     127.0.0.1:47710 - "GET /v2/reports/test?report_type=customer_analytics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47710 - "GET /v2/reports/health HTTP/1.1" 200 OK
+INFO:integrations.report_api:Testing report generation: weekly_business
+INFO:integrations.report_engine:Generating weekly business report
+INFO:integrations.report_engine:Weekly business report generated successfully: weekly_business_20251019
+INFO:     127.0.0.1:47710 - "GET /v2/reports/test?report_type=weekly_business HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37210 - "GET /v2/reports/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35288 - "GET /v2/reports/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56346 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49352 - "GET /v2/reports/health HTTP/1.1" 200 OK
+INFO:integrations.report_api:Testing report generation: daily_sales
+INFO:integrations.report_engine:Generating daily sales report for 2025-10-19
+ERROR:integrations.ai_insights:Error analyzing revenue performance: BusinessInsight.__init__() got an unexpected keyword argument 'confidence'
+INFO:integrations.ai_insights:Generated 2 sales insights
+INFO:integrations.report_engine:Daily sales report generated successfully: daily_sales_20251019
+INFO:     127.0.0.1:43796 - "GET /v2/reports/test?report_type=daily_sales HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36218 - "GET /v2/reports/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35152 - "GET /v2/reports/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40210 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40216 - "GET /v2/reports/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38578 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38588 - "GET /v2/reports/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49222 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53988 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53990 - "GET /v2/reports/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54004 - "GET /v2/reports/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54016 - "OPTIONS /v2/reports/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54016 - "GET /v2/reports/health HTTP/1.1" 200 OK
+INFO:integrations.report_api:Testing report generation: daily_sales
+INFO:integrations.report_engine:Generating daily sales report for 2025-10-19
+ERROR:integrations.ai_insights:Error analyzing revenue performance: BusinessInsight.__init__() got an unexpected keyword argument 'confidence'
+INFO:integrations.ai_insights:Generated 2 sales insights
+INFO:integrations.report_engine:Daily sales report generated successfully: daily_sales_20251019
+INFO:     127.0.0.1:52804 - "GET /v2/reports/test?report_type=daily_sales HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50938 - "GET /v2/reports/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50952 - "OPTIONS /v2/reports/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45070 - "OPTIONS /universal/analytics/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45070 - "OPTIONS /universal/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45086 - "OPTIONS /universal/products HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45102 - "OPTIONS /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45104 - "OPTIONS /v2/analytics/product-performance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45112 - "OPTIONS /v2/analytics/cross-platform-insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45124 - "OPTIONS /universal/analytics/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45070 - "OPTIONS /universal/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45086 - "OPTIONS /universal/products HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45102 - "OPTIONS /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45104 - "OPTIONS /v2/analytics/product-performance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45112 - "OPTIONS /v2/analytics/cross-platform-insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45124 - "GET /universal/analytics/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45086 - "GET /universal/products HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45070 - "GET /universal/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45124 - "GET /universal/analytics/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45102 - "GET /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45104 - "GET /v2/analytics/product-performance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45112 - "GET /v2/analytics/cross-platform-insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45124 - "GET /universal/products HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45070 - "GET /universal/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45086 - "GET /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45104 - "GET /v2/analytics/product-performance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45112 - "GET /v2/analytics/cross-platform-insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45086 - "OPTIONS /v2/reports/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45086 - "GET /v2/reports/health HTTP/1.1" 200 OK
+INFO:integrations.report_engine:Generating daily sales report for 2025-10-19
+ERROR:integrations.ai_insights:Error analyzing revenue performance: BusinessInsight.__init__() got an unexpected keyword argument 'confidence'
+INFO:integrations.ai_insights:Generated 2 sales insights
+INFO:integrations.report_engine:Daily sales report generated successfully: daily_sales_20251019
+INFO:     127.0.0.1:51192 - "GET /v2/reports/daily-sales HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41904 - "GET /v2/reports/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59858 - "GET /v2/reports/health HTTP/1.1" 200 OK
+INFO:integrations.report_api:Testing report generation: daily_sales
+INFO:integrations.report_engine:Generating daily sales report for 2025-10-19
+ERROR:integrations.ai_insights:Error analyzing revenue performance: BusinessInsight.__init__() got an unexpected keyword argument 'confidence'
+INFO:integrations.ai_insights:Generated 2 sales insights
+INFO:integrations.report_engine:Daily sales report generated successfully: daily_sales_20251019
+INFO:     127.0.0.1:59858 - "GET /v2/reports/test?report_type=daily_sales HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35716 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35724 - "GET /v2/reports/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39580 - "GET /v2/reports/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43450 - "GET /universal/products HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43436 - "GET /universal/analytics/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43440 - "GET /universal/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43458 - "GET /v2/analytics/product-performance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43452 - "GET /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43466 - "GET /v2/analytics/cross-platform-insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43436 - "GET /universal/products HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43440 - "GET /universal/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43450 - "GET /universal/analytics/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43458 - "GET /v2/analytics/product-performance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43466 - "GET /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43452 - "GET /v2/analytics/cross-platform-insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37092 - "OPTIONS /v2/reports/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37092 - "GET /v2/reports/health HTTP/1.1" 200 OK
+INFO:integrations.report_api:Testing report generation: daily_sales
+INFO:integrations.report_engine:Generating daily sales report for 2025-10-19
+ERROR:integrations.ai_insights:Error analyzing revenue performance: BusinessInsight.__init__() got an unexpected keyword argument 'confidence'
+INFO:integrations.ai_insights:Generated 2 sales insights
+INFO:integrations.report_engine:Daily sales report generated successfully: daily_sales_20251019
+INFO:     127.0.0.1:37092 - "GET /v2/reports/test?report_type=daily_sales HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41576 - "GET /universal/products HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41560 - "GET /universal/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41558 - "GET /universal/analytics/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41594 - "GET /v2/analytics/product-performance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41580 - "GET /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41608 - "GET /v2/analytics/cross-platform-insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41558 - "GET /universal/products HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41594 - "GET /universal/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41560 - "GET /universal/analytics/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41576 - "GET /v2/analytics/product-performance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41580 - "GET /v2/analytics/cross-platform-insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41608 - "GET /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37928 - "OPTIONS /v2/reports/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37928 - "GET /v2/reports/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46242 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39668 - "OPTIONS /v2/reports/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39668 - "GET /v2/reports/health HTTP/1.1" 200 OK
+INFO:integrations.report_api:Testing report generation: daily_sales
+INFO:integrations.report_engine:Generating daily sales report for 2025-10-19
+ERROR:integrations.ai_insights:Error analyzing revenue performance: BusinessInsight.__init__() got an unexpected keyword argument 'confidence'
+INFO:integrations.ai_insights:Generated 2 sales insights
+INFO:integrations.report_engine:Daily sales report generated successfully: daily_sales_20251019
+INFO:     127.0.0.1:47646 - "GET /v2/reports/test?report_type=daily_sales HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53120 - "OPTIONS /v2/reports/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53120 - "GET /v2/reports/health HTTP/1.1" 200 OK
+INFO:integrations.report_api:Testing report generation: daily_sales
+INFO:integrations.report_engine:Generating daily sales report for 2025-10-19
+ERROR:integrations.ai_insights:Error analyzing revenue performance: BusinessInsight.__init__() got an unexpected keyword argument 'confidence'
+INFO:integrations.ai_insights:Generated 2 sales insights
+INFO:integrations.report_engine:Daily sales report generated successfully: daily_sales_20251019
+INFO:     127.0.0.1:46576 - "GET /v2/reports/test?report_type=daily_sales HTTP/1.1" 200 OK
+INFO:integrations.report_api:Testing report generation: daily_sales
+INFO:integrations.report_engine:Generating daily sales report for 2025-10-19
+ERROR:integrations.ai_insights:Error analyzing revenue performance: BusinessInsight.__init__() got an unexpected keyword argument 'confidence'
+INFO:integrations.ai_insights:Generated 2 sales insights
+INFO:integrations.report_engine:Daily sales report generated successfully: daily_sales_20251019
+INFO:     127.0.0.1:46608 - "GET /v2/reports/test?report_type=daily_sales HTTP/1.1" 200 OK
+INFO:integrations.report_api:Testing report generation: daily_sales
+INFO:integrations.report_engine:Generating daily sales report for 2025-10-19
+ERROR:integrations.ai_insights:Error analyzing revenue performance: BusinessInsight.__init__() got an unexpected keyword argument 'confidence'
+INFO:integrations.ai_insights:Generated 2 sales insights
+INFO:integrations.report_engine:Daily sales report generated successfully: daily_sales_20251019
+INFO:     127.0.0.1:40356 - "GET /v2/reports/test?report_type=daily_sales HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53118 - "OPTIONS /v2/reports/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53118 - "GET /v2/reports/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52856 - "GET /health HTTP/1.1" 200 OK
+INFO:integrations.report_api:Testing report generation: daily_sales
+INFO:integrations.report_engine:Generating daily sales report for 2025-10-19
+ERROR:integrations.ai_insights:Error analyzing revenue performance: BusinessInsight.__init__() got an unexpected keyword argument 'confidence'
+INFO:integrations.ai_insights:Generated 2 sales insights
+INFO:integrations.report_engine:Daily sales report generated successfully: daily_sales_20251019
+INFO:     127.0.0.1:52866 - "GET /v2/reports/test?report_type=daily_sales HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51666 - "OPTIONS /v2/reports/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51666 - "GET /v2/reports/health HTTP/1.1" 200 OK
+INFO:integrations.report_api:Testing report generation: daily_sales
+INFO:integrations.report_engine:Generating daily sales report for 2025-10-19
+ERROR:integrations.ai_insights:Error analyzing revenue performance: BusinessInsight.__init__() got an unexpected keyword argument 'confidence'
+INFO:integrations.ai_insights:Generated 2 sales insights
+INFO:integrations.report_engine:Daily sales report generated successfully: daily_sales_20251019
+INFO:     127.0.0.1:45330 - "GET /v2/reports/test?report_type=daily_sales HTTP/1.1" 200 OK
+INFO:integrations.report_api:Testing report generation: customer_analytics
+INFO:integrations.report_engine:Generating customer analytics report
+ERROR:integrations.report_engine:Query execution failed: (psycopg2.errors.UndefinedColumn) column "name" does not exist
+LINE 3:             name,
+                    ^
+
+[SQL: 
+        SELECT 
+            name,
+            segment,
+            order_total,
+            customer_id
+        FROM customer_segments 
+        ORDER BY order_total DESC
+        LIMIT 10
+        ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+INFO:integrations.ai_insights:Generated 2 customer insights
+INFO:integrations.report_engine:Customer analytics report generated successfully: customer_analytics_20251019_224907
+INFO:     127.0.0.1:45344 - "GET /v2/reports/test?report_type=customer_analytics HTTP/1.1" 200 OK
+INFO:integrations.report_engine:Generating customer analytics report
+ERROR:integrations.report_engine:Query execution failed: (psycopg2.errors.UndefinedColumn) column "name" does not exist
+LINE 3:             name,
+                    ^
+
+[SQL: 
+        SELECT 
+            name,
+            segment,
+            order_total,
+            customer_id
+        FROM customer_segments 
+        ORDER BY order_total DESC
+        LIMIT 10
+        ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+INFO:integrations.ai_insights:Generated 2 customer insights
+INFO:integrations.report_engine:Customer analytics report generated successfully: customer_analytics_20251019_224907
+INFO:     127.0.0.1:45354 - "GET /v2/reports/customer-analytics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56902 - "OPTIONS /v2/reports/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56902 - "GET /v2/reports/health HTTP/1.1" 200 OK
+INFO:integrations.report_api:Testing report generation: daily_sales
+INFO:integrations.report_engine:Generating daily sales report for 2025-10-19
+ERROR:integrations.ai_insights:Error analyzing revenue performance: BusinessInsight.__init__() got an unexpected keyword argument 'confidence'
+INFO:integrations.ai_insights:Generated 2 sales insights
+INFO:integrations.report_engine:Daily sales report generated successfully: daily_sales_20251019
+INFO:     127.0.0.1:56902 - "GET /v2/reports/test?report_type=daily_sales HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56068 - "OPTIONS /universal/analytics/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56068 - "OPTIONS /universal/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56080 - "OPTIONS /universal/products HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56088 - "OPTIONS /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56094 - "OPTIONS /v2/analytics/product-performance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56098 - "OPTIONS /v2/analytics/cross-platform-insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56100 - "OPTIONS /universal/analytics/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56068 - "OPTIONS /universal/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56080 - "OPTIONS /universal/products HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56088 - "OPTIONS /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56094 - "OPTIONS /v2/analytics/product-performance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56098 - "OPTIONS /v2/analytics/cross-platform-insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56100 - "GET /universal/analytics/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56080 - "GET /universal/products HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56068 - "GET /universal/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56094 - "GET /v2/analytics/product-performance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56088 - "GET /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56098 - "GET /v2/analytics/cross-platform-insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56080 - "GET /universal/products HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56094 - "GET /universal/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56100 - "GET /universal/analytics/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56068 - "GET /v2/analytics/product-performance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56098 - "GET /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56088 - "GET /v2/analytics/cross-platform-insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56098 - "OPTIONS /v2/reports/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56098 - "GET /v2/reports/health HTTP/1.1" 200 OK
+INFO:integrations.report_engine:Generating daily sales report for 2025-10-19
+ERROR:integrations.ai_insights:Error analyzing revenue performance: BusinessInsight.__init__() got an unexpected keyword argument 'confidence'
+INFO:integrations.ai_insights:Generated 2 sales insights
+INFO:integrations.report_engine:Daily sales report generated successfully: daily_sales_20251019
+INFO:     127.0.0.1:56098 - "GET /v2/reports/daily-sales HTTP/1.1" 200 OK
+INFO:integrations.report_api:Testing report generation: customer_analytics
+INFO:integrations.report_engine:Generating customer analytics report
+ERROR:integrations.report_engine:Query execution failed: (psycopg2.errors.UndefinedColumn) column "name" does not exist
+LINE 3:             name,
+                    ^
+
+[SQL: 
+        SELECT 
+            name,
+            segment,
+            order_total,
+            customer_id
+        FROM customer_segments 
+        ORDER BY order_total DESC
+        LIMIT 10
+        ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+INFO:integrations.ai_insights:Generated 2 customer insights
+INFO:integrations.report_engine:Customer analytics report generated successfully: customer_analytics_20251019_225000
+INFO:     127.0.0.1:51686 - "GET /v2/reports/test?report_type=customer_analytics HTTP/1.1" 200 OK
+INFO:integrations.report_api:Testing report generation: weekly_business
+INFO:integrations.report_engine:Generating weekly business report
+INFO:integrations.report_engine:Weekly business report generated successfully: weekly_business_20251019
+INFO:     127.0.0.1:45498 - "GET /v2/reports/test?report_type=weekly_business HTTP/1.1" 200 OK
+INFO:integrations.report_engine:Generating daily sales report for 2025-10-19
+ERROR:integrations.ai_insights:Error analyzing revenue performance: BusinessInsight.__init__() got an unexpected keyword argument 'confidence'
+INFO:integrations.ai_insights:Generated 2 sales insights
+INFO:integrations.report_engine:Daily sales report generated successfully: daily_sales_20251019
+INFO:     127.0.0.1:45498 - "GET /v2/reports/daily-sales HTTP/1.1" 200 OK
+INFO:integrations.report_api:Testing report generation: daily_sales
+INFO:integrations.report_engine:Generating daily sales report for 2025-10-19
+ERROR:integrations.ai_insights:Error analyzing revenue performance: BusinessInsight.__init__() got an unexpected keyword argument 'confidence'
+INFO:integrations.ai_insights:Generated 2 sales insights
+INFO:integrations.report_engine:Daily sales report generated successfully: daily_sales_20251019
+INFO:     127.0.0.1:51136 - "GET /v2/reports/test?report_type=daily_sales HTTP/1.1" 200 OK
+INFO:integrations.report_engine:Generating daily sales report for 2025-10-19
+ERROR:integrations.ai_insights:Error analyzing revenue performance: BusinessInsight.__init__() got an unexpected keyword argument 'confidence'
+INFO:integrations.ai_insights:Generated 2 sales insights
+INFO:integrations.report_engine:Daily sales report generated successfully: daily_sales_20251019
+INFO:     127.0.0.1:51148 - "GET /v2/reports/daily-sales HTTP/1.1" 200 OK
+INFO:integrations.report_engine:Generating daily sales report for 2025-10-19
+ERROR:integrations.ai_insights:Error analyzing revenue performance: BusinessInsight.__init__() got an unexpected keyword argument 'confidence'
+INFO:integrations.ai_insights:Generated 2 sales insights
+INFO:integrations.report_engine:Daily sales report generated successfully: daily_sales_20251019
+INFO:     127.0.0.1:36372 - "GET /v2/reports/daily-sales HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35128 - "OPTIONS /v2/reports/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35128 - "GET /v2/reports/health HTTP/1.1" 200 OK
+INFO:integrations.report_api:Testing report generation: daily_sales
+INFO:integrations.report_engine:Generating daily sales report for 2025-10-19
+ERROR:integrations.ai_insights:Error analyzing revenue performance: BusinessInsight.__init__() got an unexpected keyword argument 'confidence'
+INFO:integrations.ai_insights:Generated 2 sales insights
+INFO:integrations.report_engine:Daily sales report generated successfully: daily_sales_20251019
+INFO:     127.0.0.1:40496 - "GET /v2/reports/test?report_type=daily_sales HTTP/1.1" 200 OK
+INFO:integrations.report_engine:Generating daily sales report for 2025-10-19
+ERROR:integrations.ai_insights:Error analyzing revenue performance: BusinessInsight.__init__() got an unexpected keyword argument 'confidence'
+INFO:integrations.ai_insights:Generated 2 sales insights
+INFO:integrations.report_engine:Daily sales report generated successfully: daily_sales_20251019
+INFO:     127.0.0.1:40504 - "GET /v2/reports/daily-sales HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41514 - "OPTIONS /v2/shopify/connection-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41520 - "OPTIONS /v2/shopify/connection-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41514 - "GET /v2/shopify/connection-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41520 - "GET /v2/shopify/connection-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37548 - "OPTIONS /v2/analytics/clv/bulk?limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37556 - "OPTIONS /v2/analytics/clv/bulk?limit=20 HTTP/1.1" 200 OK
+INFO:analytics.clv_calculator:Calculating CLV for 20 customers
+INFO:analytics.clv_calculator:Successfully calculated CLV for 20 customers
+INFO:     127.0.0.1:37556 - "GET /v2/analytics/clv/bulk?limit=20 HTTP/1.1" 200 OK
+INFO:analytics.clv_calculator:Calculating CLV for 20 customers
+INFO:analytics.clv_calculator:Successfully calculated CLV for 20 customers
+INFO:     127.0.0.1:37548 - "GET /v2/analytics/clv/bulk?limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41518 - "GET /v2/reports/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57516 - "OPTIONS /universal/analytics/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57520 - "OPTIONS /universal/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57516 - "OPTIONS /universal/products HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57528 - "OPTIONS /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57530 - "OPTIONS /v2/analytics/product-performance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57536 - "OPTIONS /v2/analytics/cross-platform-insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57538 - "OPTIONS /universal/analytics/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57520 - "OPTIONS /universal/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57516 - "OPTIONS /universal/products HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57528 - "OPTIONS /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57530 - "OPTIONS /v2/analytics/product-performance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57536 - "OPTIONS /v2/analytics/cross-platform-insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57516 - "GET /universal/products HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57538 - "GET /universal/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57530 - "GET /v2/analytics/product-performance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57520 - "GET /universal/analytics/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57536 - "GET /v2/analytics/cross-platform-insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57528 - "GET /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57516 - "GET /universal/products HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57538 - "GET /universal/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57530 - "GET /v2/analytics/product-performance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57520 - "GET /universal/analytics/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57536 - "GET /v2/analytics/cross-platform-insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57530 - "GET /universal/orders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45732 - "OPTIONS /v2/analytics/cross-platform/performance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45736 - "OPTIONS /v2/analytics/cross-platform/kpis HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45752 - "OPTIONS /v2/analytics/cross-platform/recommendations HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45764 - "OPTIONS /v2/analytics/cross-platform/performance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45776 - "OPTIONS /v2/analytics/cross-platform/kpis HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45790 - "OPTIONS /v2/analytics/cross-platform/recommendations HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45736 - "GET /v2/analytics/cross-platform/performance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45776 - "GET /v2/analytics/cross-platform/kpis HTTP/1.1" 200 OK
+ERROR:analytics.cross_platform_analytics:Error predicting platform performance: unsupported operand type(s) for -: 'float' and 'decimal.Decimal'
+INFO:     127.0.0.1:45790 - "GET /v2/analytics/cross-platform/recommendations HTTP/1.1" 200 OK
+ERROR:analytics.cross_platform_analytics:Error predicting platform performance: unsupported operand type(s) for -: 'float' and 'decimal.Decimal'
+INFO:     127.0.0.1:45776 - "GET /v2/analytics/cross-platform/recommendations HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45736 - "GET /v2/analytics/cross-platform/kpis HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45764 - "GET /v2/analytics/cross-platform/performance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58754 - "OPTIONS /v2/reports/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58754 - "GET /v2/reports/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35580 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35638 - "GET /health HTTP/1.1" 200 OK
+INFO:integrations.report_engine:Generating daily sales report for 2025-10-19
+ERROR:integrations.ai_insights:Error analyzing revenue performance: BusinessInsight.__init__() got an unexpected keyword argument 'confidence'
+INFO:integrations.ai_insights:Generated 2 sales insights
+INFO:integrations.report_engine:Daily sales report generated successfully: daily_sales_20251019
+INFO:     127.0.0.1:54780 - "GET /v2/reports/daily-sales HTTP/1.1" 200 OK
+INFO:integrations.report_engine:Generating customer analytics report
+ERROR:integrations.report_engine:Query execution failed: (psycopg2.errors.UndefinedColumn) column "name" does not exist
+LINE 3:             name,
+                    ^
+
+[SQL: 
+        SELECT 
+            name,
+            segment,
+            order_total,
+            customer_id
+        FROM customer_segments 
+        ORDER BY order_total DESC
+        LIMIT 10
+        ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+INFO:integrations.ai_insights:Generated 2 customer insights
+INFO:integrations.report_engine:Customer analytics report generated successfully: customer_analytics_20251019_230638
+INFO:     127.0.0.1:46058 - "GET /v2/reports/customer-analytics HTTP/1.1" 200 OK
+INFO:integrations.report_engine:Generating weekly business report
+INFO:integrations.report_engine:Weekly business report generated successfully: weekly_business_20251019
+INFO:     127.0.0.1:46068 - "GET /v2/reports/weekly-business HTTP/1.1" 200 OK
+INFO:integrations.report_engine:Generating daily sales report for 2025-10-19
+ERROR:integrations.ai_insights:Error analyzing revenue performance: BusinessInsight.__init__() got an unexpected keyword argument 'confidence'
+INFO:integrations.ai_insights:Generated 2 sales insights
+INFO:integrations.report_engine:Daily sales report generated successfully: daily_sales_20251019
+INFO:     127.0.0.1:46630 - "GET /v2/reports/daily-sales HTTP/1.1" 200 OK
+INFO:integrations.report_engine:Generating customer analytics report
+ERROR:integrations.report_engine:Query execution failed: (psycopg2.errors.UndefinedColumn) column "name" does not exist
+LINE 3:             name,
+                    ^
+
+[SQL: 
+        SELECT 
+            name,
+            segment,
+            order_total,
+            customer_id
+        FROM customer_segments 
+        ORDER BY order_total DESC
+        LIMIT 10
+        ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+INFO:integrations.ai_insights:Generated 2 customer insights
+INFO:integrations.report_engine:Customer analytics report generated successfully: customer_analytics_20251019_230703
+INFO:     127.0.0.1:38118 - "GET /v2/reports/customer-analytics HTTP/1.1" 200 OK
+INFO:integrations.report_engine:Generating weekly business report
+INFO:integrations.report_engine:Weekly business report generated successfully: weekly_business_20251019
+INFO:     127.0.0.1:51190 - "GET /v2/reports/weekly-business HTTP/1.1" 200 OK
+INFO:integrations.report_engine:Generating weekly business report
+INFO:integrations.report_engine:Weekly business report generated successfully: weekly_business_20251019
+INFO:     127.0.0.1:41082 - "GET /v2/reports/weekly-business HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [549605]
